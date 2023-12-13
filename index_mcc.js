@@ -1,14 +1,14 @@
 // Define Sheets
-const e = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/186by0Km8QzR-GbHNq-fk4ihxdBDv7XEErkrHtrNrFSY/edit#gid=10465686");
+const e = SpreadsheetApp.openByUrl("");
 const t = e.getSheetByName("r_c"), s = e.getSheetByName("r_ca"), a = e.getSheetByName("r_a"), i = e.getSheetByName("r_ag");
 
 // Main Function
 function main() {
-    // get all accounts id 
+    // Get all accounts id 
     const ids = getAccountIds();
-    // clear sheet
+    // Clear sheets
     t.getRange("A2:K").clearContent(), s.getRange("A2:I").clearContent(), a.getRange("A2:K").clearContent(), i.getRange("A2:H").clearContent();
-    // for every batch of 50 ids
+    // For every batch of 50 ids
     for (let j = 0; j < ids.length; j++) {
         let accountIds = ids[j];
         // select accounts
@@ -19,7 +19,6 @@ function main() {
         accountSelector.executeInParallel("processAccounts", "pushData");
   }
 }
-
 
 function processAccounts(){
 
@@ -134,7 +133,6 @@ function processAccounts(){
     return [u, $, B, z];
 }
 
-
 function pushData(results) {
     const sheets = {
         0: t,
@@ -168,7 +166,6 @@ function pushData(results) {
     }
 }
 
-
 function getAccountIds() {
   const chunkSize = 50;
   let accountIterator = AdsManagerApp.accounts().get();
@@ -189,6 +186,3 @@ function getAccountIds() {
 
   return chunkedAccounts;
 }
-
-
-
