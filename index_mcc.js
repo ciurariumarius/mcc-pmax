@@ -1,4 +1,4 @@
-// Define Sheet
+// Define Sheets
 const e = SpreadsheetApp.openByUrl("https://docs.google.com/spreadsheets/d/186by0Km8QzR-GbHNq-fk4ihxdBDv7XEErkrHtrNrFSY/edit#gid=10465686");
 const t = e.getSheetByName("r_c"), s = e.getSheetByName("r_ca"), a = e.getSheetByName("r_a"), i = e.getSheetByName("r_ag");
 
