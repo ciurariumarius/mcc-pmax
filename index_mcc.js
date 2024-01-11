@@ -1,10 +1,11 @@
 // Define Sheets
 const e = SpreadsheetApp.openByUrl("");
-const t = e.getSheetByName("r_c"), s = e.getSheetByName("r_ca"), a = e.getSheetByName("r_a"), i = e.getSheetByName("r_ag");
+// Made a copy of this template: https://docs.google.com/spreadsheets/d/1igTja6inzVKh_yvQ5t_lv6EvRtaUYlFqNES-gmx0woI/copy
 
+const t = e.getSheetByName("r_c"), s = e.getSheetByName("r_ca"), a = e.getSheetByName("r_a"), i = e.getSheetByName("r_ag");
 // Main Function
 function main() {
-    // Get all accounts id 
+    // Get all accounts id
     const ids = getAccountIds();
     // Clear sheets
     t.getRange("A2:K").clearContent(), s.getRange("A2:I").clearContent(), a.getRange("A2:K").clearContent(), i.getRange("A2:H").clearContent();
